@@ -1,0 +1,248 @@
+/* .navbar-brand {
+    font-weight: bold;
+} */
+
+.nav-link:hover {
+    color: white !important;
+}
+
+.card-title {
+    /* text-transform: lowercase; */
+    /* text-transform: capitalize; */
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.card-text {
+    font-size: 16px;
+}
+
+.hdr {
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.imglogo {
+    width: 40px;
+    height: 40px;
+}
+
+.active {
+    color: black !important;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+.image-header {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#more {
+    display: none;
+}
+
+#myBtn {
+    background-color: rgb(197, 194, 194);
+    /* box-shadow: 0px 0px 2px 2px rgb(197, 194, 194); */
+    border: none;
+    border-radius: 20px;
+    width: 20vh;
+    height: 6vh;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* .header-icon {
+    width: 50%;
+    margin: 0 auto;
+} */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-gap: 30px; */
+    /* margin: 30px; */
+    /* margin-top: 40px; */
+    align-items: center;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.judul-header {
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid rgb(197, 196, 196);
+    border-bottom: 1px solid rgb(197, 196, 196);
+    margin-top: 30px;
+}
+
+.judul-header p {
+    margin: 10px;
+}
+
+.grid-isi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 10px;
+    /* width: 500px; */
+}
+
+.isi-no:hover {
+    background-color: rgb(240, 237, 237);
+}
+
+.isi-no p {
+    font-size: 10px;
+    text-align: center;
+}
+
+.isi:hover {
+    background-color: rgb(240, 237, 237);
+}
+
+/* .isi {
+    width: 280px;
+} */
+
+.isi p {
+    font-size: 10px;
+    text-align: left;
+}
+
+.isi-harga:hover {
+    background-color: rgb(240, 237, 237);
+}
+
+
+/* .isi-harga {
+    width: 50px;
+} */
+
+.isi-harga p {
+    font-size: 10px;
+    text-align: right;
+}
+
+.footer {
+    padding: 20px 0;
+    background-color: cadetblue;
+}
+
+.footer p {
+    font-size: 15px;
+    margin: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-header .jdl-ulasan {
+    font-size: 20px;
+}
+
+
+
+/* --------------------------------------------------------------------------
+-------------------- MEDIA SREEN / TAMPILAN RESPONSIVE -------------------
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 1121px) {
+
+    .btn {
+        margin-bottom: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+        grid-gap: 20px;
+    }
+
+    .grid-isi .isi-harga p {
+        text-align: right;
+        font-size: 11px;
+    }
+
+    .btn {
+        margin-bottom: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+        margin-top: 30px;
+    }
+
+
+    /* .grid>article {
+        margin-bottom: 30px;
+    } */
+
+    .card-header .jdl-ulasan {
+        font-size: 14px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
+
+    .card-text {
+        font-size: 12px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+
+}
+
+/* For small devices (phones, less than 600px) */
+@media only screen and (max-width: 388px) {
+    .hdr {
+        font-size: 1.5vh;
+    }
+
+    .imglogo {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .hdr {
+        font-size: 1.5vh;
+    }
+
+    .imglogo {
+        width: 25px;
+        height: 25px;
+    }
+
+    #myBtn {
+        width: 15vh;
+        font-size: 11px;
+    }
+}

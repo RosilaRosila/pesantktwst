@@ -1,0 +1,219 @@
+.hdr {
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.imglogo {
+    width: 40px;
+    height: 40px;
+}
+
+.active {
+    color: black !important;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+.card-body {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.form-label {
+    font-size: 14px;
+}
+
+.line {
+    border-bottom: 2px double blue;
+}
+
+.footer {
+    padding: 20px 0;
+    background-color: cadetblue;
+    margin-top: 30px;
+}
+
+.footer p {
+    font-size: 15px;
+    margin: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logoimg {
+    width: 300;
+    height: 300;
+    margin-top: 150px;
+}
+
+/* --------------------------------------------------------------------------
+-------------------- MEDIA SREEN / TAMPILAN RESPONSIVE -------------------
+-------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1200px) {
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+
+    .grid>article {
+        width: 300px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .grid>article img {
+        width: 300px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+
+    .grid>article {
+        width: 290px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .grid>article img {
+        width: 290px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .img {
+        width: 120px;
+        height: 1200px;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
+
+
+    .grid>article {
+        width: 390px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .grid>article img {
+        width: 390px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .img {
+        width: 120px;
+        height: 1200px;
+    }
+
+    .form-label {
+        font-size: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .form-label {
+        font-size: 10px;
+    }
+
+    .logoimg {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* For small devices (phones, less than 600px) */
+@media only screen and (max-width: 388px) {
+    .hdr {
+        font-size: 1.5vh;
+    }
+
+    .imglogo {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .hdr {
+        font-size: 1.5vh;
+    }
+
+    .imglogo {
+        width: 25px;
+        height: 25px;
+    }
+
+    .logoimg {
+        width: 70px;
+        height: 70px;
+        margin-top: -20px;
+    }
+
+}

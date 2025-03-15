@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>DASHBOARD | HALAMAN ADMIN</title>
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.cs') }}s">
+
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/jqvmap/jqvmap.min.css') }}">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
+
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.css') }}">
+
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.css') }}">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <!-- Link Icon -->
+    <link rel="shortcut icon" href="{{ asset('/') }}images/logokp.png" />
+
+    <!-- Style css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}css/halaman_admin.css">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <style>
+        .icon-unread {
+            color: grey;
+            cursor: pointer;
+        }
+
+        .icon-read {
+            color: gold;
+        }
+
+        .mark-as-read {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .text-link:hover {
+            color: blue !important;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <!-- Navbar -->
+        @include('layout-admin.navbar')
+        <!-- /.navbar -->
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        @include('layout-admin.sidebar')
+        <!-- /.sidebar -->
+
+
+        <!-- Content Wrapper. Contains page content -->
+        <br>
+        <br>
+        <div class="content-wrapper">
+            <div class="content-header">
+                <!-- Content Header (Page header) -->
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <h4 class="m-0 text-dark">Data Pesan Tiket Wisata</h4>
+                        <br>
+                        <br>
+
+                        <section class="content">
+                            <div class="card">
+                                <div class="card-header">
+                                    <!-- SEARCH FORM -->
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <table class="table table-hover table-bordered text-sm">
+                                        <thead class="table-primary">
+                                            <tr style="text-align: center; font-size:11px">
+                                                <th>No</th>
+                                                <th>Kode Transaksi</th>
+                                                <th>Nama Wisata</th>
+                                                <th>Wisatawan</th>
+                                                <th>Jumlah Orang</th>
+                                                <th>Total Pembayaran</th>
+                                                <th>Tanggal Kunjungan</th>
+                                                <th>Status Pembayaran</th>
+                                                <th>Status Tiket</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if($pesantiket->count() > 0)
+                                            @foreach($pesantiket as $fs)
+                                            <tr style="font-size: smaller;">
+                                                <th style="text-align: center;">{{ $loop->iteration + ($pesantiket->currentPage() - 1) * $pesantiket->perPage() }}</th>
+                                                <td>{{ $fs->kode_transaksi }}</td>
+                                                <td>{{ $fs->datatiket->namawst }}</td>
+                                                <td style="text-align:center;">{{ $fs->wisatawan }}</td>
+                                                <td style="text-align: center;">{{ $fs->qty }}</td>
+                                                <td style="text-align: center;">{{ formatRupiah($fs->totalharga) }}</td>
+                                                <td style="text-align:center;">{{ Carbon\Carbon::parse($fs->tanggal)->format('d-m-Y') }}</td>
+                                                <td style="text-align:center;">
+                                                    <label class="badge {{ ( $fs->status == 0) ? 'badge-danger' : 'badge-success' }}">
+                                                        {{ ( $fs-> status=='Unpaid') ? 'Unpaid' : 'Paid' }}
+                                                    </label>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <label class="badge {{ ( $fs->kehadiran == 0) ? 'badge-danger' : 'badge-success' }}">
+                                                        {{ ( $fs-> kehadiran==0) ? 'Belum Masuk' : 'Sudah Masuk' }}
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                            @else
+                                            <tr>
+                                                <td class="text-center" colspan="9">Data Belum Tersedia</td>
+                                            </tr>
+                                            @endif
+                                            <tr>
+                                                <td class="text-right text-bold" colspan="8" style="font-size: small;">Total Pesanan Tiket Wisata</td>
+                                                <td class="text-center text-bold">{{ $jumlah_pesanan }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <div>
+                                        <div class="float-left" style="font-size: 12px; font-weight:bold">
+                                            Showing
+                                            {{ $pesantiket->firstItem() }}
+                                            to
+                                            {{ $pesantiket->lastItem() }}
+                                            of
+                                            {{ $pesantiket->total() }}
+                                            entries
+                                        </div>
+                                        <div class="float-right">
+                                            <!-- {{ $pesantiket->links() }} -->
+                                            {!! $pesantiket->appends(Request::except('page'))->render() !!}
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-warning " href="{{ route('dashboard') }}" style="color: white;">
+                                        Kembali
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Content Wrapper. Contains page content -->
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="main-footer text-center ">
+        <p>Copyright &copy 2024 Wisata Kabupaten Pangandaran</p>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- ChartJS -->
+    <script src="{{ asset('adminlte/plugins/chart.js/Chart.min.js') }}"></script>
+    <!-- Sparkline -->
+    <script src="{{ asset('adminlte/plugins/sparklines/sparkline.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ asset('adminlte/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{{ asset('adminlte/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+    <!-- daterangepicker -->
+    <script src="{{ asset('adminlte/plugins/moment/moment.min.js ') }}"></script>
+    <script src="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{{ asset('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <!-- Summernote -->
+    <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <!-- overlayScrollbars -->
+    <script src="{{ asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{{ asset('adminlte/dist/js/pages/dashboard.js') }}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ asset('adminlte/dist/js/demo.js') }}"></script>
+</body>
+
+</html>

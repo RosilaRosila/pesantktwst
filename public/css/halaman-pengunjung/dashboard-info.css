@@ -1,0 +1,375 @@
+/* .nav-link:hover {
+    font-weight: bold;
+    /* font-size: 3vh; */
+/* background-color: white; */
+/* color: white; */
+/* } */
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 16px;
+}
+
+.hdr {
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.imglogo {
+    width: 40px;
+    height: 40px;
+}
+
+.wafixed {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+}
+
+.pesan {
+    background: cadetblue;
+    display: block;
+    width: 60px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50px;
+    text-decoration: none;
+    transition: ease all 0.3s;
+    position: fixed;
+    right: 20px;
+    top: 100px;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+.active {
+    color: black !important;
+    font-weight: bold;
+}
+
+.card-body {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* p {
+    text-transform: lowercase;
+    text-transform: capitalize;
+    text-transform: uppercase; 
+} */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    /* margin: 30px; */
+    margin-top: 30px;
+    align-items: center;
+}
+
+img {
+    object-fit: cover;
+}
+
+.grid>article {
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 4px 4px rgba(92, 92, 92, 0.3); */
+    /* box-shadow: 10px 5px 5px 0px rgba(0, 0, 0, 0.3); */
+
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(144, 143, 143);
+
+}
+
+.grid>article a {
+    text-decoration: none;
+    color: black;
+}
+
+.grid>article p {
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid>article img:hover {
+    /* box-shadow: 0px 0px 7px 7px rgb(153, 172, 173);  */
+    transform: scale(1.1);
+}
+
+.grid>article img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.content {
+    text-align: center;
+}
+
+.content p {
+    font-size: 12px;
+}
+
+.content a {
+    font-size: 16px;
+}
+
+.btn {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+
+.btn:hover {
+    background-color: cornflowerblue;
+    border: none;
+}
+
+.footer {
+    padding: 20px 0;
+    background-color: cadetblue;
+    margin-top: 30px;
+}
+
+.footer p {
+    font-size: 15px;
+    margin: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+-------------------- MEDIA SREEN / TAMPILAN RESPONSIVE -------------------
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 3000px) {
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+
+    .grid>article {
+        width: 300px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .grid>article img {
+        max-width: 300px;
+        width: 100%;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 1600px) {
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+
+    .grid>article {
+        width: 300px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .grid>article img {
+        max-width: 300px;
+        width: 100%;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+
+    .grid>article {
+        width: 300px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .grid>article img {
+        width: 300px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+
+    .grid>article {
+        width: 290px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .grid>article img {
+        width: 290px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
+
+
+    .grid>article {
+        width: 300px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .grid>article img {
+        width: 300px;
+        /* align-items: center; */
+        margin: auto;
+    }
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+/* For small devices (phones, less than 600px) */
+@media only screen and (max-width: 388px) {
+    .hdr {
+        font-size: 1.5vh;
+    }
+
+    .imglogo {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* For small devices (phones, less than 600px) */
+@media only screen and (max-width: 479px) {
+    .hdr {
+        font-size: 2vh;
+    }
+
+    .imglogo {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .hdr {
+        font-size: 1.5vh;
+    }
+
+    .imglogo {
+        width: 25px;
+        height: 25px;
+    }
+
+    .card-title {
+        font-size: 10px;
+    }
+
+    .card-text {
+        font-size: 8px;
+    }
+
+    .grid>article p {
+        font-size: 10px;
+    }
+
+    .content a {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 533px) {
+    .card-title {
+        font-size: 12px;
+    }
+
+    .card-text {
+        font-size: 10px;
+    }
+
+    .grid>article p {
+        font-size: 10px;
+    }
+
+    .content a {
+        font-size: 10px;
+    }
+}

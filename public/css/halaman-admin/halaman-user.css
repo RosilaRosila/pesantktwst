@@ -1,0 +1,105 @@
+.nav-link:hover {
+    color: white !important;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.active {
+    color: black !important;
+    font-weight: bold;
+}
+
+.gambar {
+    height: 560px;
+    /* background-image: url("{{ asset('/') }}images/logokp.png"); */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gambar h4 {
+    color: white;
+    z-index: 1;
+    padding: 20px 25px;
+    border: 3px solid white;
+}
+
+.gambar:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(98, 151, 153, 0.6);
+}
+
+section {
+    padding: 50px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-gap: 30px; */
+    /* margin: 30px; */
+    /* margin-top: 40px; */
+    align-items: center;
+}
+
+.card-header {
+    height: 50px;
+}
+
+.image-header {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.footer {
+    padding: 20px 0;
+    background-color: cadetblue;
+}
+
+.footer p {
+    font-size: 15px;
+    margin: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+/* --------------------------------------------------------------------------
+-------------------- MEDIA SREEN / TAMPILAN RESPONSIVE -------------------
+-------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1000px) {
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
+
+
+    .grid>article {
+        margin-bottom: 30px;
+    }
+
+}
